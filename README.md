@@ -4,7 +4,7 @@ REST API Partial Response Library for Spring Boot Applications
 Jaspe provides JSON partial response (partial resource) support for Spring Boot Applications.
 
 ## Getting started
-    1. Add the jaspe dependency to your boot project.
+    1. Add the jaspe dependency to your project.
     2. Add the annotation @EnableJaspe to either your SpringBootApplication Main class or your Configuraion class. 
 
 ## Understanding the fields parameter
