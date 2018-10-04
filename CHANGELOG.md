@@ -15,15 +15,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-
+    - First version of jaspe API Rest partial response library.
+    - Added support for disabling and enable Jaspe through @EnableJaspe or @DisableJaspe
 ### Changed
-
+    - N/A
 ### Deprecated 
-
+    - N/A
 ### Removed
-
+    - N/A
 ### Fixed
-
+    - N/A
 ### Security 
+    - N/A
 
 [Unreleased]: https://github.com/cjrequena/jaspe/compare/v1.0.0...HEAD
