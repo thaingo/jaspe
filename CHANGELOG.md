@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.0] - 2018-10-04
 ### Added
     - First version of jaspe API Rest partial response library.
     - Added support for disabling and enable Jaspe through @EnableJaspe or @DisableJaspe
@@ -28,4 +29,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security 
     - N/A
 
+[1.0.0]: https://github.com/cjrequena/jaspe/compare/v1.0.0...v1.0.0
 [Unreleased]: https://github.com/cjrequena/jaspe/compare/v1.0.0...HEAD
