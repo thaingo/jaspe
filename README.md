@@ -4,6 +4,8 @@ REST API Partial Response Library for Spring Boot Applications
 Jaspe provides JSON partial response (partial resource) support for Spring Boot Applications.
 
 ## Getting started
+    1. Add the jaspe dependency to your boot project.
+    2. Add the annotation @EnableJaspe to either your SpringBootApplication Main class or your Configuraion class. 
 
 ## Understanding the fields parameter
 The `fields` parameter filters the API response so that the response only includes a specific set of fields. The `fields` parameter lets you remove nested properties from an API response and thereby reduce your bandwidth usage.
