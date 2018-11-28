@@ -21,7 +21,7 @@
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
 
         <!-- Spring Boot -->
-        <spring-boot.version>1.5.15.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
 
         <!-- Testing and covering -->
         <junit.version>4.12</junit.version>
