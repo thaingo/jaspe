@@ -13,7 +13,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ import java.util.List;
  */
 @Configuration
 @ComponentScan(basePackages = {"com.jaspe"})
-public class JaspeWebConfiguration extends WebMvcConfigurerAdapter {
+public class JaspeWebConfiguration implements WebMvcConfigurer {
 
   @Autowired
   JaspeResponseBodyHandlerInterceptor jaspeResponseBodyHandlerInterceptor;
