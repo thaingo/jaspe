@@ -43,8 +43,8 @@ public class JaspeWebConfiguration implements WebMvcConfigurer {
   Jackson2ObjectMapperBuilder jackson2ObjectMapperBuilder;
 
   @Override
-  public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-
+  public void configureContentNegotiation(ContentNegotiationConfigurer contentNegotiationConfigurer) {
+    contentNegotiationConfigurer.mediaType("json", MediaType.APPLICATION_JSON);
   }
 
   @Override
@@ -52,7 +52,7 @@ public class JaspeWebConfiguration implements WebMvcConfigurer {
     final ObjectMapper objectMapper = this.jackson2ObjectMapperBuilder.build();
     JaspeJsonMessageConverter jaspeJsonMessageConverter = new JaspeJsonMessageConverter(new JaspeJsonView.Builder().withObjectMapper(objectMapper).build());
     jaspeJsonMessageConverter.setSupportedMediaTypes(getSupportedMediaTypes());
-    converters.add(jaspeJsonMessageConverter);
+    converters.add(0,jaspeJsonMessageConverter);
   }
 
   @Override

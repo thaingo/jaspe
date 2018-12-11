@@ -4,41 +4,33 @@ import com.jaspe.annotation.DisableJaspe;
 import com.jaspe.util.RequestUtil;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-public class JaspeDisabledHandlerInterceptor extends HandlerInterceptorAdapter {
+public class JaspeDisabledHandlerInterceptor implements HandlerInterceptor {
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HandlerMethod method = (HandlerMethod) handler;
-
-        if (method.getMethodAnnotation(DisableJaspe.class) != null) {
-            RequestUtil.disableJaspe(request);
-        }
-        return super.preHandle(request, response, handler);
+  @Override
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+    if(handler instanceof HandlerMethod) {
+      HandlerMethod method = (HandlerMethod) handler;
+      if (method.getMethodAnnotation(DisableJaspe.class) != null) {
+        RequestUtil.disableJaspe(request);
+      }
     }
+    return true;
+  }
 
+  @Override
+  public void postHandle(
+    HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
+  }
 
-    @Override
-    public void postHandle(
-        HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        super.postHandle(request, response, handler, modelAndView);
-    }
+  @Override public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
 
-
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        super.afterCompletion(request, response, handler, ex);
-    }
-
-    @Override
-    public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        super.afterConcurrentHandlingStarted(request, response, handler);
-    }
+  }
 }
 
