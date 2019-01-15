@@ -2,7 +2,6 @@ package com.jaspe.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jaspe.interceptor.JaspeDisabledHandlerInterceptor;
-import com.jaspe.interceptor.JaspeResponseBodyHandlerInterceptor;
 import com.jaspe.messageconverter.JaspeJsonMessageConverter;
 import com.jaspe.view.JaspeJsonView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +32,7 @@ import java.util.List;
 @ComponentScan(basePackages = {"com.jaspe"})
 public class JaspeWebConfiguration implements WebMvcConfigurer {
 
-  @Autowired
-  JaspeResponseBodyHandlerInterceptor jaspeResponseBodyHandlerInterceptor;
+
 
   @Autowired
   JaspeDisabledHandlerInterceptor jaspeDisabledHandlerInterceptor;
@@ -57,7 +55,6 @@ public class JaspeWebConfiguration implements WebMvcConfigurer {
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-    registry.addInterceptor(jaspeResponseBodyHandlerInterceptor);
     registry.addInterceptor(jaspeDisabledHandlerInterceptor);
   }
 
